@@ -9,12 +9,21 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 
 from backend.agent import ask_agent
+from fastapi.middleware.cors import CORSMiddleware
 
 # Load dataset for plotting
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 df = pd.read_csv(os.path.join(BASE_DIR, "titanic.csv"))
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # for assignment, allow all
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class Query(BaseModel):
     question: str

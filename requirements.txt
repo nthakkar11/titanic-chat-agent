@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+streamlit
+pandas
+matplotlib
+seaborn
+python-dotenv
+requests
+langchain
+langchain-openai
+langchain-experimental
+openai
+tabulate

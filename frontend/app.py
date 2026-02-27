@@ -8,6 +8,8 @@ st.title("🚢 Titanic Dataset Chat Agent")
 
 st.write("Ask questions about the Titanic dataset in plain English.")
 
+BACKEND_URL = "https://titanic-chat-agent-oz1b.onrender.com/ask"
+
 question = st.text_input("Enter your question")
 
 if st.button("Ask"):
@@ -16,7 +18,7 @@ if st.button("Ask"):
     else:
         with st.spinner("Analyzing dataset..."):
             response = requests.post(
-                "http://127.0.0.1:8000/ask",
+                BACKEND_URL,
                 json={"question": question}
             )
 

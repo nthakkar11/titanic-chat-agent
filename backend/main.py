@@ -8,7 +8,7 @@ import seaborn as sns
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-from agent import ask_agent
+from backend.agent import ask_agent
 
 # Load dataset for plotting
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
